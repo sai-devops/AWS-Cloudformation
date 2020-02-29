@@ -7,7 +7,7 @@
 				"Label": {
 					"default": "VPC configuration parameters"
 				},
-				"Parameters": [ "VPC Name",
+				"Parameters": [ "VPCNAME",
 					"VPCCIDR",
 				"PublicSubnetCIDR", 
 				"SSHLocation"]
@@ -87,7 +87,8 @@
 			"Properties": {
 				"Tags": [{
 					"Key": "Name",
-					"Value": "IGW"
+					"Value": { "Fn::Join" : [ "-", [{"Ref": "VPCNAME"
+						}, "IGW"] ] }
 				},
 				{
 					"Key": "CloudFormationStack",
